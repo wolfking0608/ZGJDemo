@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".qrcode.decode.CaptureActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#000000"
+        android:paddingLeft="6dp"
+        android:paddingStart="6dp">
+
+        <ImageView
+            android:id="@+id/iv_qr_back"
+            android:layout_width="18dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tv_qr_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/iv_qr_back"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_qr_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/tv_qr_open_image"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <SurfaceView
+        android:id="@+id/device_qrcode_preview_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rl"/>
+
+    <com.wcyq.zgjdemo.qrcode.view.ViewfinderView
+        android:id="@+id/vv_qr_viewfinderView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:device_qrcode_corner_color="#00FF00"
+        app:device_qrcode_frame_color="#90FFFFFF"
+        app:device_qrcode_laser_color="#00FF00"
+        app:device_qrcode_mask_color="#60000000"
+        app:device_qrcode_result_color="#B0000000"
+        app:device_qrcode_result_point_color="#C0FFFF00"/>
+    <!--app:label_text="将二维码放入框中，即可扫描"
+    app:label_text_color="#ffffff"
+    app:label_text_size="16sp"-->
+    <RelativeLayout
+        android:id="@+id/btn_scan_light"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:id="@+id/iv_scan_light"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_scan_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="打开手电筒"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
